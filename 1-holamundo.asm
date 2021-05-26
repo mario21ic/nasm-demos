@@ -14,15 +14,15 @@ section .text
     global _start
 
 _start:
-mov eax, 4
-mov ebx, 1
-mov ecx, msg
+mov eax, 4 ; the system call for write (sys_write)
+mov ebx, 1 ; file descriptor 1 - standard output
+mov ecx, msg ; put the offset of msg in ecx
 ;mov edx, 14
-mov edx, len
+mov edx, len ; len is the size to print
 ;int 80h
-int 0x80 
+int 0x80 ; call the kernel
 
 ; salir exitosamente
-mov eax, 1
-int 0x80
+mov eax, 1 ; the system call for exit (sys_exit)
+int 0x80 ; call the kernel
 

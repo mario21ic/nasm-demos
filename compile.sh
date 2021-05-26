@@ -9,4 +9,12 @@ file $name.o
 
 ld -m elf_i386 -o $name $name.o
 file $name
+size $name
+
+set +e
+ldd $name
+readelf -a $name
+
 ./$name
+
+rm -f $name.o $name
