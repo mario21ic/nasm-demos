@@ -19,9 +19,10 @@ _start:
 
     ;cmp eax, ebx ; no va a saltar
     cmp eax, 5 ; va a modificar zero flag y saltara
-    jz cuerpo_if ; if
-
-    jmp salir ; para no ejecutar de nuevo cuerpo_if
+    jz cuerpo_if
+else:
+    mov ebx, 0
+    jmp salir
 
 cuerpo_if:
     mov ebx, 1
