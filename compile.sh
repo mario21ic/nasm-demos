@@ -18,4 +18,4 @@ readelf -a $name
 
 ./$name
 
-#rm -f $name.o $name
+rm -f $name.o $name
