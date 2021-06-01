@@ -8,6 +8,10 @@ segment .text
 
 
 _start:
+    ; example
+    ;for (int ecx=3; ecx>0; ecx--)
+    ;    eax = eax + ecx
+    
     ;mov ecx, 2 ; saldra 3=2+1
     ;mov ecx, 3 ; saldra 6=3+2+1
     ;mov ecx, 4 ; saldra : 10=5+4+3+2+1
@@ -28,13 +32,6 @@ for:
     mov ebx, 1 ; codigo monitor
     mov ecx, rpta ; direccion de memoria donde esta la data
     mov edx, 1 ; cantidad de caracteres
-    int 0x80
-
-    ; Imprimir en pantalla
-    mov eax, 4
-    mov ebx, 1 ; codigo monitor
-    mov ecx, "xD"; direccion de memoria donde esta la data
-    mov edx, 2 ; cantidad de caracteres
     int 0x80
 
     ; Finalizar
