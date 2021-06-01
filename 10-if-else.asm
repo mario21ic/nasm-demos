@@ -33,12 +33,13 @@ salir:
 
     ; Imprimir en pantalla
     mov eax, 4
-    mov ebx, 1
-    mov ecx, rpta
-    mov edx, 1
+    mov ebx, 1 ; codigo monitor
+    mov ecx, rpta ; direccion de memoria donde esta la data
+    mov edx, 1 ; cantidad de caracteres
     int 0x80
 
     ; Finalizar
     mov eax, 1
-    mov ebx, 0
+    mov ebx, 0 ; Ok
+    ;mov ebx, 1 ; Error
     int 0x80

@@ -16,6 +16,7 @@ set +e
 ldd $name
 readelf -a $name
 
+set -e
 ./$name
 
-rm -f $name.o $name
+rm -rf $name.o $name
