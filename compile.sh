@@ -20,3 +20,4 @@ set -e
 ./$name
 
 rm -rf $name.o $name
+
