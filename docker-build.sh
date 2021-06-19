@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t mario21ic/nasm .
+docker build -t mario21ic/nasm:build .

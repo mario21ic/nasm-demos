@@ -1,0 +1,13 @@
+FROM ubuntu:18.04 as builder
+ARG FILE_SRC=1-suma_resta.asm
+RUN apt-get update && \
+    apt-get install -y nasm gcc file
+WORKDIR /src/
+COPY ${FILE_SRC} /src/
+RUN nasm -f elf32 -g ${FILE_SRC} -o my_app.o && \
+    ld -m elf_i386 -o my_app my_app.o
+
+FROM scratch
+COPY --from=builder /src/my_app /
+CMD ["/my_app"]
+
