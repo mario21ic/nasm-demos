@@ -13,3 +13,8 @@ Build with Docker and Run:
 ```
 ./docker-image.sh 4-rotacion.asm
 ```
+
+Running with Earthly:
+```
+./run.sh 4-rotacion.asm
+```
